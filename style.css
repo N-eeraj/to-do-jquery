@@ -1,0 +1,145 @@
+:root {
+    --primary: #001;
+    --accent: #F33;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    outline: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5vh;
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 5vh 0;
+    background-color: var(--primary);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+body > div:first-child {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+}
+
+input[type="text"] {
+    width: 40%;
+    padding: 5px 10px;
+    background-color: var(--primary);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+input[type="text"]::placeholder {
+    color: var(--accent);
+    opacity: 0.5;
+}
+input[type="text"]:focus {
+    animation: glow 1200ms infinite ease-in-out;
+}
+
+body > div:first-child > button {
+    padding: 5px;
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 1px solid var(--accent);
+    transition: 400ms;
+}
+body > div:first-child > button:hover {
+    background-color: var(--primary);
+    color: var(--accent);
+}
+
+#item_list {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 3vmax;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 5vw;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.fa-solid {
+    cursor: pointer;
+}
+
+.fa-solid:first-of-type {
+    color: transparent;
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+}
+
+.done .fa-solid:first-of-type {
+    color: var(--accent);
+    border: none;
+}
+
+label {
+    color: var(--accent);
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.done label {
+    text-decoration: line-through 3px;
+}
+
+.fa-solid:last-of-type {
+    color: var(--accent);
+}
+.fa-solid:last-of-type:hover {
+    color: red;
+}
+
+
+@media screen and (min-width: 720px) {
+    body {
+        row-gap: 10vh;
+    }
+    body > div:first-child {
+        width: 60%;
+    }
+    input[type="text"] {
+        height: 80%;
+    }
+    body > div:first-child > button {
+        padding: 7px;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    body > div:first-child {
+        width: 50%;
+    }
+    input[type="text"] {
+        width: 60%;
+    }
+}
+
+@keyframes glow {
+    50% {
+        box-shadow: 0 0 7px var(--accent);
+    }
+}
